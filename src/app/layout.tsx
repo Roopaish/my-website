@@ -10,11 +10,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className={`${rabenue.className}`}>
+      <body className={`${rabenue.className} min-h-screen`}>
         <header className="">
           <div className="mx-auto max-w-7xl bg-transparent p-4">
             <Link href="/" className="text-lg font-bold">
-              ROOPAISH.
+              Roopaish.
             </Link>
           </div>
         </header>

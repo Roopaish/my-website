@@ -1,1 +1,1 @@
-export const dummyImage = 'https://dummyimage.com/600x400/000/fff';
+export const dummyImage = 'https://source.unsplash.com/featured/300x201';
