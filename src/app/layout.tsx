@@ -1,18 +1,26 @@
-import './globals.css'
+import { rabenue } from '@/utils/localFonts';
+import Link from 'next/link';
+import '../styles/globals.css';
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body>{children}</body>
+      <body className={`${rabenue.className}`}>
+        <header className="">
+          <div className="mx-auto max-w-7xl bg-transparent p-4">
+            <Link href="/" className="text-lg font-bold">
+              ROOPAISH.
+            </Link>
+          </div>
+        </header>
+        {children}
+        <footer></footer>
+      </body>
     </html>
-  )
+  );
 }
