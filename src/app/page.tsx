@@ -1,8 +1,9 @@
 'use client';
 
 import Page from '@/components/Page';
+import ServiceItem from '@/components/ServiceItem';
 import WorkListItem from '@/components/WorkListItems';
-import { galleryData, workData } from '@/constants/data';
+import { galleryData, serviceData, workData } from '@/constants/data';
 import useMount from '@/utils/useMount';
 import Image from 'next/image';
 
@@ -124,6 +125,15 @@ export default function Home() {
         <ul className="space-y-6">
           {workData.map((work, i) => (
             <WorkListItem key={i} {...work} />
+          ))}
+        </ul>
+      </section>
+      <section className="min-h-screen pt-40">
+        <h1 className="text-right">Services</h1>
+        <p className="text-right text-2xl">What I can do for you.</p>
+        <ul className="flex flex-col gap-4 md:flex-row">
+          {serviceData.map((service, i) => (
+            <ServiceItem key={i} {...service} />
           ))}
         </ul>
       </section>

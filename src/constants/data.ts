@@ -1,3 +1,4 @@
+import { ServiceItemType } from '@/components/ServiceItem';
 import { WorkListItemType } from '@/components/WorkListItems';
 
 export const workData: WorkListItemType[] = [
@@ -61,4 +62,21 @@ export const galleryData = [
   '/images/ease-commerce.png',
   'https://i.postimg.cc/7LTXsTTL/chat-app.png',
   '/images/hyperce.png',
+];
+
+export const serviceData: ServiceItemType[] = [
+  {
+    title: 'Web Development',
+    description:
+      'Developing interactive and responsive websites using modern web technologies. I ensure that your website runs smoothly on all devices, providing an excellent user experience.',
+    subtitle: 'Building User-Friendly and Dynamic Websites',
+    technologies: ['React', 'Next.js', 'Remix', 'Node.js'],
+  },
+  {
+    title: 'App Development',
+    description:
+      'Building robust and scalable mobile apps that provide seamless functionality on both iOS and Android devices. I utilize Flutter to create beautiful and intuitive user interfaces.',
+    subtitle: 'Creating Seamless Mobile Experiences with Flutter',
+    technologies: ['Flutter'],
+  },
 ];
