@@ -17,7 +17,9 @@ export default function RootLayout({
               Roopaish.
             </Link>
             <ul className="flex items-center space-x-4">
-              <li>Blogs.</li>
+              <li>
+                <Link href="/blogs">Blogs.</Link>
+              </li>
             </ul>
             <button>Let&apos;s talk.</button>
           </div>
