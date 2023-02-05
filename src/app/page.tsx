@@ -1,6 +1,8 @@
 'use client';
 
 import Page from '@/components/Page';
+import WorkListItem from '@/components/WorkListItems';
+import { galleryData, workData } from '@/constants/data';
 import useMount from '@/utils/useMount';
 import Image from 'next/image';
 
@@ -10,7 +12,7 @@ export default function Home() {
   return (
     <Page>
       <section
-        className={`relative flex flex-col-reverse justify-between md:mt-40 md:flex-row  md:space-x-4 `}
+        className={`relative flex min-h-screen flex-col-reverse justify-between md:flex-row md:space-x-4 md:pt-40 `}
       >
         <div
           className={`relative mt-32 text-right md:mt-0 md:flex-1  ${
@@ -27,15 +29,17 @@ export default function Home() {
                 mounted ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              {[1, 2, 3, 4, 5].map((_, i) => (
+              {galleryData.slice(0, 5).map((img, i) => (
                 <figure
                   className="relative min-h-[320px] w-full animate-slideUp grayscale filter"
                   key={i}
                 >
                   <Image
-                    src={`https://source.unsplash.com/random/600x${i + 10}00`}
-                    alt="dummy"
+                    src={img}
+                    alt="gallery"
                     fill={true}
+                    placeholder="blur"
+                    blurDataURL="/images/placeholder.png"
                     className="object-cover"
                   />
                 </figure>
@@ -46,15 +50,17 @@ export default function Home() {
                 mounted ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              {[1, 2, 3, 4, 5].map((_, i) => (
+              {galleryData.slice(6).map((img, i) => (
                 <figure
-                  className="relative min-h-[320px] w-full animate-slideDown  grayscale filter"
+                  className="relative min-h-[320px] w-full animate-slideDown grayscale filter"
                   key={i}
                 >
                   <Image
-                    src={`https://source.unsplash.com/random/600x${i + 1}00`}
-                    alt="dummy"
+                    src={img}
+                    alt="gallery"
                     fill={true}
+                    placeholder="blur"
+                    blurDataURL="/images/placeholder.png"
                     className="object-cover"
                   />
                 </figure>
@@ -112,6 +118,14 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </section>
+      <section className="min-h-screen pt-40">
+        <h1>Works</h1>
+        <ul className="space-y-6">
+          {workData.map((work, i) => (
+            <WorkListItem key={i} {...work} />
+          ))}
+        </ul>
       </section>
     </Page>
   );

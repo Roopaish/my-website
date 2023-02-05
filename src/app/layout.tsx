@@ -16,6 +16,10 @@ export default function RootLayout({
             <Link href="/" className="text-lg font-bold">
               Roopaish.
             </Link>
+            <ul className="flex items-center space-x-4">
+              <li>Blogs.</li>
+              <li>Tools.</li>
+            </ul>
             <button>Let&apos;s talk.</button>
           </div>
         </header>
