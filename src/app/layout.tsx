@@ -12,10 +12,11 @@ export default function RootLayout({
       <head />
       <body className={`${rabenue.className} min-h-screen`}>
         <header className="">
-          <div className="mx-auto max-w-7xl bg-transparent p-4">
+          <div className="mx-auto flex max-w-7xl items-center justify-between bg-transparent p-4">
             <Link href="/" className="text-lg font-bold">
               Roopaish.
             </Link>
+            <button>Let&apos;s talk.</button>
           </div>
         </header>
         {children}

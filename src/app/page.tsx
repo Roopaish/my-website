@@ -1,7 +1,6 @@
 'use client';
 
 import Page from '@/components/Page';
-import { dummyImage } from '@/constants/links';
 import useMount from '@/utils/useMount';
 import Image from 'next/image';
 
@@ -11,7 +10,7 @@ export default function Home() {
   return (
     <Page>
       <section
-        className={`relative flex flex-col-reverse justify-between  md:flex-row  md:space-x-4 `}
+        className={`relative flex flex-col-reverse justify-between md:mt-40 md:flex-row  md:space-x-4 `}
       >
         <div
           className={`relative mt-32 text-right md:mt-0 md:flex-1  ${
@@ -22,44 +21,46 @@ export default function Home() {
           <p className="text-2xl">
             An honorable list of my websites and apps projects.
           </p>
-          <div className="flex h-full w-full justify-end space-x-4 overflow-hidden">
-            <div className="flex h-full w-full flex-col space-y-4">
-              <figure className="relative h-80 w-40  max-w-xs">
-                <Image
-                  src={dummyImage}
-                  alt="dummy"
-                  fill={true}
-                  className="object-cover"
-                />
-              </figure>
-              <figure className="relative h-80 w-40 max-w-xs">
-                <Image
-                  src={dummyImage}
-                  alt="dummy"
-                  fill={true}
-                  className="object-cover"
-                />
-              </figure>
+          <section className="ml-auto flex h-[400px] w-full max-w-lg space-x-4 overflow-hidden">
+            <div
+              className={`flex w-full flex-col space-y-4 transition-opacity duration-1000 ${
+                mounted ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              {[1, 2, 3, 4, 5].map((_, i) => (
+                <figure
+                  className="relative min-h-[320px] w-full animate-slideUp grayscale filter"
+                  key={i}
+                >
+                  <Image
+                    src={`https://source.unsplash.com/random/600x${i + 10}00`}
+                    alt="dummy"
+                    fill={true}
+                    className="object-cover"
+                  />
+                </figure>
+              ))}
             </div>
-            <div className="flex h-full w-full flex-col space-y-4">
-              <figure className="relative h-80 w-40  max-w-xs">
-                <Image
-                  src={dummyImage}
-                  alt="dummy"
-                  fill={true}
-                  className="object-cover"
-                />
-              </figure>
-              <figure className="relative h-80 w-40 max-w-xs">
-                <Image
-                  src={dummyImage}
-                  alt="dummy"
-                  fill={true}
-                  className="object-cover"
-                />
-              </figure>
+            <div
+              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000  ${
+                mounted ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              {[1, 2, 3, 4, 5].map((_, i) => (
+                <figure
+                  className="relative min-h-[320px] w-full animate-slideDown  grayscale filter"
+                  key={i}
+                >
+                  <Image
+                    src={`https://source.unsplash.com/random/600x${i + 1}00`}
+                    alt="dummy"
+                    fill={true}
+                    className="object-cover"
+                  />
+                </figure>
+              ))}
             </div>
-          </div>
+          </section>
         </div>
         <div className="mt-20 md:mt-0 md:flex-1">
           <h1
