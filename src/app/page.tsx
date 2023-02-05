@@ -128,7 +128,7 @@ export default function Home() {
           ))}
         </ul>
       </section>
-      <section className="pt-40">
+      <section className="min-h-screen pt-40">
         <h1 className="text-right">Services</h1>
         <p className="text-right text-2xl">What I can do for you.</p>
         <ul className="flex flex-col gap-4 md:flex-row">
@@ -136,6 +136,18 @@ export default function Home() {
             <ServiceItem key={i} {...service} />
           ))}
         </ul>
+        <h1 className="mt-32">Technologies</h1>
+        <p className="text-2xl">Technology I am familiar with.</p>
+        <p className="mt-4 flex gap-4 text-xl">
+          &#10170; React, Next.js, Remix, Node.js, Express, PostgreSQL, Redis,
+          Firebase, GraphQl, REST
+          <br />
+          &#10170; CSS, Tailwind CSS, Ant Design, Next UI, Styled-Components{' '}
+          <br />
+          &#10170; Flutter, GetX, Provider <br /> &#10170; Git, Github, Gitlab,
+          Docker <br />
+          &#10170; Dart, Typescript
+        </p>
       </section>
     </Page>
   );
