@@ -16,7 +16,7 @@ export default function Home() {
         className={`relative flex min-h-screen flex-col-reverse justify-between md:flex-row md:space-x-4 md:pt-40 `}
       >
         <div
-          className={`relative mt-32 text-right md:mt-0 md:flex-1  ${
+          className={`relative mt-40 text-right md:mt-0 md:flex-1  ${
             mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
           } transition-positionOpacity  duration-1000`}
         >
@@ -128,7 +128,7 @@ export default function Home() {
           ))}
         </ul>
       </section>
-      <section className="min-h-screen pt-40">
+      <section className="pt-40">
         <h1 className="text-right">Services</h1>
         <p className="text-right text-2xl">What I can do for you.</p>
         <ul className="flex flex-col gap-4 md:flex-row">

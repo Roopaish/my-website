@@ -31,10 +31,10 @@ export default function WorkListItem({
       </figure>
       <div className="relative">
         <span className="text-4xl">{title}</span>{' '}
-        <a href={href} target="_blank" rel="noreferrer" className="text-2xl">
+        <a href={href} target="_blank" rel="noreferrer" className="text-xl">
           @{company}
         </a>
-        <div className="text-2xl">
+        <div className="text-xl">
           <p> &#10170;{date}</p>
           <p>
             {' '}
