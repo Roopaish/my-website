@@ -12,7 +12,7 @@ export default function ServiceItem({
   technologies,
 }: ServiceItemType) {
   return (
-    <li className="w-full bg-gray-50 p-6 text-center">
+    <li className="w-full bg-gray-50 p-6 text-center dark:bg-gray-900">
       <h2 className="pt-10 text-4xl">{title}</h2>
       <p>{subtitle}</p>
       <p className="mt-10 text-2xl">

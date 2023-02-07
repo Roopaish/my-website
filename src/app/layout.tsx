@@ -1,4 +1,5 @@
 import Modal from '@/components/Modal';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
 import { contactData } from '@/constants/data';
 import { rabenue } from '@/utils/localFonts';
 import Link from 'next/link';
@@ -12,7 +13,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className={`${rabenue.className} min-h-screen`}>
+      <body
+        className={`${rabenue.className} min-h-screen dark:bg-gray-900 dark:bg-opacity-95 dark:text-white`}
+      >
         <header className="text-xl md:text-2xl">
           <div className="mx-auto flex max-w-7xl items-center justify-between bg-transparent p-4">
             <Link href="/" className="font-medium uppercase">
@@ -54,11 +57,11 @@ export default function RootLayout({
           </div>
         </header>
         {children}
-        <footer className="bg-gray-50 p-10 ">
+        <footer className="bg-gray-50 p-10 dark:bg-gray-900 dark:text-white ">
           <div>&copy;roopaish 2023</div>
           <div className="mt-4">
             <h1>Connect with me</h1>
-            <ul className="flex flex-wrap gap-4 text-xl">
+            <ul className="mb-5 flex flex-wrap gap-4 text-xl">
               {contactData.slice(1).map((contact) => (
                 <li key={contact.title}>
                   <a href={contact.href} target="_blank" rel="noreferrer">
@@ -68,6 +71,8 @@ export default function RootLayout({
               ))}
             </ul>
           </div>
+
+          <ThemeSwitcher />
         </footer>
       </body>
     </html>

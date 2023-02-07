@@ -38,7 +38,7 @@ export default function Modal({
         ></div>
         <div className="fixed inset-0 flex items-center justify-center">
           <div
-            className={`rounded-md bg-white p-6 transition-all ${
+            className={`rounded-md bg-white p-6 transition-all dark:bg-gray-900 dark:text-white ${
               isOpen ? 'scale-100' : 'scale-90'
             }
             ${variant === 'screen' ? 'h-full w-full' : ''}
@@ -53,7 +53,7 @@ export default function Modal({
                 <Icon
                   type="cross"
                   size={24}
-                  className="rotate-0 text-gray-700 transition-transform duration-1000 ease-in-out group-hover:rotate-90"
+                  className="rotate-0 text-gray-700 transition-transform duration-1000 ease-in-out group-hover:rotate-90 dark:text-gray-300"
                 />
               </button>
             </header>

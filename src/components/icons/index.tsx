@@ -1,7 +1,9 @@
 import CrossIcon from './cross.icon';
+import MoonIcon from './moon.icon';
+import SunIcon from './sun.icon';
 
 type IconType = {
-  type: 'cross';
+  type: 'cross' | 'sun' | 'moon';
   size?: number;
   color?: string;
   className?: string;
@@ -31,6 +33,8 @@ export default function Icon({
       {
         {
           cross: <CrossIcon />,
+          sun: <SunIcon />,
+          moon: <MoonIcon />,
         }[type]
       }
     </svg>
