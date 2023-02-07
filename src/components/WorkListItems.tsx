@@ -21,11 +21,12 @@ export default function WorkListItem({
 }: WorkListItemType) {
   return (
     <li className="group relative">
-      <figure className="absolute right-1/3 -top-1/3 min-h-[320px] w-60 opacity-0 grayscale filter transition-all delay-500 duration-500 group-hover:-top-1/2 group-hover:right-[35%] group-hover:opacity-50 xl:group-hover:opacity-100">
+      <figure className="absolute right-1/3 -top-1/3 h-80 w-60 overflow-hidden opacity-0 grayscale filter transition-all delay-500 duration-500 group-hover:-top-1/2 group-hover:right-[35%] group-hover:opacity-50 xl:group-hover:opacity-100">
         <Image
           src={image ?? `https://source.unsplash.com/random/${date}}`}
           alt={company}
-          fill={true}
+          height={320}
+          width={240}
           className="object-contain"
         />
       </figure>

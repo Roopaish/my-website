@@ -25,7 +25,7 @@ export default function RootLayout({
           </div>
         </header>
         {children}
-        <footer className="mt-40 bg-gray-50 p-10">
+        <footer className="bg-gray-50 p-10">
           <div>&copy;roopaish 2023</div>
           <div className="mt-4">
             <h1>Connect with me</h1>

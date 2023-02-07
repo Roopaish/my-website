@@ -1,9 +1,11 @@
 'use client';
 
 import Page from '@/components/Page';
+import Section from '@/components/Section';
 import ServiceItem from '@/components/ServiceItem';
 import WorkListItem from '@/components/WorkListItems';
 import { galleryData, serviceData, workData } from '@/constants/data';
+import { shimmerData } from '@/utils/shimmer';
 import useMount from '@/utils/useMount';
 import Image from 'next/image';
 
@@ -22,26 +24,44 @@ export default function Home() {
         >
           <h1>Gallery</h1>
           <p className="text-2xl">
-            An honorable list of my websites and apps projects.
+            My projects are a reflection of my passion for design and
+            development.
           </p>
           <section className="ml-auto flex h-[400px] w-full max-w-lg space-x-4 overflow-hidden">
             <div
-              className={`flex w-full flex-col space-y-4 transition-opacity duration-1000 ${
+              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000 ${
                 mounted ? 'opacity-100' : 'opacity-0'
               }`}
             >
               {galleryData.slice(0, 5).map((img, i) => (
                 <figure
-                  className="relative min-h-[320px] w-full animate-slideUp grayscale filter"
+                  className="relative max-h-[320px] min-h-[320px] w-full animate-slideUp overflow-hidden grayscale filter"
                   key={i}
                 >
                   <Image
                     src={img}
                     alt="gallery"
-                    fill={true}
+                    height={320}
+                    width={248}
                     placeholder="blur"
-                    blurDataURL="/images/placeholder.png"
-                    className="object-cover"
+                    blurDataURL={shimmerData(248, 320)}
+                    className="h-full w-full object-cover"
+                  />
+                </figure>
+              ))}
+              {galleryData.slice(0, 2).map((img, i) => (
+                <figure
+                  className="relative max-h-[320px] min-h-[320px] w-full animate-slideUp overflow-hidden grayscale filter"
+                  key={i}
+                >
+                  <Image
+                    src={img}
+                    alt="gallery"
+                    height={320}
+                    width={248}
+                    placeholder="blur"
+                    blurDataURL={shimmerData(248, 320)}
+                    className="h-full w-full object-cover"
                   />
                 </figure>
               ))}
@@ -51,18 +71,35 @@ export default function Home() {
                 mounted ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              {galleryData.slice(6).map((img, i) => (
+              {galleryData.slice(5).map((img, i) => (
                 <figure
-                  className="relative min-h-[320px] w-full animate-slideDown grayscale filter"
+                  className="relative max-h-[320px] min-h-[320px] w-full animate-slideDown overflow-hidden grayscale filter"
                   key={i}
                 >
                   <Image
                     src={img}
                     alt="gallery"
-                    fill={true}
                     placeholder="blur"
-                    blurDataURL="/images/placeholder.png"
-                    className="object-cover"
+                    blurDataURL={shimmerData(248, 320)}
+                    height={320}
+                    width={248}
+                    className="h-full w-full object-cover"
+                  />
+                </figure>
+              ))}
+              {galleryData.slice(5, 7).map((img, i) => (
+                <figure
+                  className="relative max-h-[320px] min-h-[320px] w-full animate-slideDown overflow-hidden grayscale filter"
+                  key={i}
+                >
+                  <Image
+                    src={img}
+                    alt="gallery"
+                    placeholder="blur"
+                    blurDataURL={shimmerData(248, 320)}
+                    height={320}
+                    width={248}
+                    className="h-full w-full object-cover"
                   />
                 </figure>
               ))}
@@ -120,15 +157,17 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="min-h-screen pt-40">
+
+      <Section>
         <h1>Works</h1>
         <ul className="space-y-6">
           {workData.map((work, i) => (
             <WorkListItem key={i} {...work} />
           ))}
         </ul>
-      </section>
-      <section className="min-h-screen pt-40">
+      </Section>
+
+      <Section>
         <h1 className="text-right">Services</h1>
         <p className="text-right text-2xl">What I can do for you.</p>
         <ul className="flex flex-col gap-4 md:flex-row">
@@ -136,19 +175,23 @@ export default function Home() {
             <ServiceItem key={i} {...service} />
           ))}
         </ul>
-        <h1 className="mt-32">Technologies</h1>
+      </Section>
+
+      <Section>
+        <h1>Technologies</h1>
         <p className="text-2xl">Technology I am familiar with.</p>
         <p className="mt-4 flex gap-4 text-xl">
           &#10170; React, Next.js, Remix, Node.js, Express, PostgreSQL, Redis,
-          Firebase, GraphQl, REST
+          Firebase
           <br />
+          &#10170; GraphQl, REST <br />
           &#10170; CSS, Tailwind CSS, Ant Design, Next UI, Styled-Components{' '}
           <br />
           &#10170; Flutter, GetX, Provider <br /> &#10170; Git, Github, Gitlab,
           Docker <br />
           &#10170; Dart, Typescript
         </p>
-      </section>
+      </Section>
     </Page>
   );
 }

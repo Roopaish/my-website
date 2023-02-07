@@ -18,20 +18,19 @@ module.exports = {
         slideUp: {
           '0%': {
             transform:
-              'translate3d(0, 400px, 0)' /* The image container height */,
+              'translate3d(0, 0px, 0)' /* The image container height */,
           },
           '100%': {
             transform:
-              'translate3d(0, -1760px, 0)' /* The image container height: 320*5+40*(5-1) */,
+              'translate3d(0, -1680px, 0)' /* The image container height: 320*5+16*5 */,
           },
         },
         slideDown: {
           '0%': {
-            transform:
-              'translate3d(0, -1760px, 0)' /* The image container height */,
+            transform: 'translate3d(0, -1680px, 0)',
           },
           '100%': {
-            transform: 'translate3d(0, 400px, 0)',
+            transform: 'translate3d(0, 0px, 0)',
           },
         },
       },

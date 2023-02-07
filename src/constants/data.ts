@@ -51,17 +51,16 @@ export const workData: WorkListItemType[] = [
 ];
 
 export const galleryData = [
-  'https://github.com/Roopaish/CSS-RoadMap/raw/master/img/ycr.png',
-  'https://i.postimg.cc/MK5WL2Tq/great-places-app.png',
-  'https://github.com/Roopaish/CSS-RoadMap/raw/master/img/glp.png',
-  'https://github.com/Roopaish/CSS-RoadMap/raw/master/img/rvb.png',
-  'https://i.postimg.cc/C5V7HMdh/meals-app.png',
-  'https://github.com/Roopaish/CSS-RoadMap/raw/master/img/ap.png',
-  '/images/real-time-chat.png',
-  'https://github.com/Roopaish/post_it-PERN/raw/master/images/home.png',
-  '/images/ease-commerce.png',
-  'https://i.postimg.cc/7LTXsTTL/chat-app.png',
-  '/images/hyperce.png',
+  '/images/gallery/apps.png',
+  '/images/gallery/css.png',
+  '/images/gallery/ease_music.png',
+  '/images/gallery/godot_redesign.png',
+  '/images/gallery/hyperce.png',
+  '/images/gallery/menzz.png',
+  '/images/gallery/padhao.png',
+  '/images/gallery/published_apps.png',
+  '/images/gallery/real_apps.png',
+  '/images/gallery/youtube_redesign.png',
 ];
 
 export const serviceData: ServiceItemType[] = [
