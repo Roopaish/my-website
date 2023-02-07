@@ -1,3 +1,5 @@
+import Modal from '@/components/Modal';
+import { contactData } from '@/constants/data';
 import { rabenue } from '@/utils/localFonts';
 import Link from 'next/link';
 import '../styles/globals.css';
@@ -11,52 +13,59 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body className={`${rabenue.className} min-h-screen`}>
-        <header className="">
+        <header className="text-xl md:text-2xl">
           <div className="mx-auto flex max-w-7xl items-center justify-between bg-transparent p-4">
-            <Link href="/" className="text-lg font-bold">
+            <Link href="/" className="font-medium uppercase">
               Roopaish.
             </Link>
-            <ul className="flex items-center space-x-4">
+            <ul className="flex items-center space-x-4 uppercase">
               <li>
                 <Link href="/blogs">Blogs.</Link>
               </li>
             </ul>
-            <button>Let&apos;s talk.</button>
+            <Modal trigger={"LET'S TALK."} variant="screen" title="Let's talk">
+              <div className="flex flex-col gap-4">
+                <p className="text-3xl">
+                  Any project in mind? Feel free to discuss with me. I&apos;d
+                  love to hear from you.
+                </p>
+                <div className="text-2xl">
+                  <p>
+                    You can reach me at{' '}
+                    <a href="mailto:rupesh39943@gmail.com" className="text-4xl">
+                      rupesh39943@gmail.com
+                    </a>
+                  </p>
+                  <hr className="my-10" />
+                  Or the following social handles
+                  <ul className="flex flex-wrap gap-4 text-xl">
+                    {contactData.slice(1).map((contact) => (
+                      <li key={contact.title}>
+                        &#10170;
+                        <a href={contact.href} target="_blank" rel="noreferrer">
+                          {contact.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </Modal>
           </div>
         </header>
         {children}
-        <footer className="bg-gray-50 p-10">
+        <footer className="bg-gray-50 p-10 ">
           <div>&copy;roopaish 2023</div>
           <div className="mt-4">
             <h1>Connect with me</h1>
-            <ul className="flex flex-wrap gap-4 text-lg">
-              <li>
-                <a
-                  href="https://github.com/roopaish"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Github
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com/roopaish_"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://linkedin.com/in/roopaish"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Linkedin
-                </a>
-              </li>
+            <ul className="flex flex-wrap gap-4 text-xl">
+              {contactData.slice(1).map((contact) => (
+                <li key={contact.title}>
+                  <a href={contact.href} target="_blank" rel="noreferrer">
+                    {contact.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </footer>

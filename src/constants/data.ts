@@ -51,16 +51,46 @@ export const workData: WorkListItemType[] = [
 ];
 
 export const galleryData = [
-  '/images/gallery/apps.png',
-  '/images/gallery/css.png',
-  '/images/gallery/ease_music.png',
-  '/images/gallery/godot_redesign.png',
-  '/images/gallery/hyperce.png',
-  '/images/gallery/menzz.png',
-  '/images/gallery/padhao.png',
-  '/images/gallery/published_apps.png',
-  '/images/gallery/real_apps.png',
-  '/images/gallery/youtube_redesign.png',
+  {
+    href: 'https://flutter-roadmap.netlify.app/#/',
+    img: '/images/gallery/apps.png',
+  },
+  {
+    href: 'https://roopaish.github.io/CSS-RoadMap/',
+    img: '/images/gallery/css.png',
+  },
+  {
+    href: 'https://github.com/Roopaish/ease_commerce_web',
+    img: '/images/gallery/ease_music.png',
+  },
+  {
+    href: 'https://roopaish.github.io/CSS-RoadMap/Godot%20Landing%20Page%20-%20Redesign/',
+    img: '/images/gallery/godot_redesign.png',
+  },
+  {
+    href: '',
+    img: '/images/gallery/hyperce.png',
+  },
+  {
+    href: 'https://menzz.co/',
+    img: '/images/gallery/menzz.png',
+  },
+  {
+    href: 'https://padhao.com.np/',
+    img: '/images/gallery/padhao.png',
+  },
+  {
+    href: 'https://aagamannepal.com/',
+    img: '/images/gallery/published_apps.png',
+  },
+  {
+    href: 'https://github.com/Roopaish/post_it-PERN',
+    img: '/images/gallery/real_apps.png',
+  },
+  {
+    href: 'https://roopaish.github.io/CSS-RoadMap/Youtube%20Clone%20-%20Redesign/',
+    img: '/images/gallery/youtube_redesign.png',
+  },
 ];
 
 export const serviceData: ServiceItemType[] = [
@@ -77,5 +107,24 @@ export const serviceData: ServiceItemType[] = [
       'Building robust and scalable mobile apps that provide seamless functionality on both iOS and Android devices. I utilize Flutter to create beautiful and intuitive user interfaces.',
     subtitle: 'Creating Seamless Mobile Experiences with Flutter',
     technologies: ['Flutter'],
+  },
+];
+
+export const contactData = [
+  {
+    title: 'Email',
+    href: 'mailto:rupesh39943@gmail.com',
+  },
+  {
+    title: 'Github',
+    href: 'https://twitter.com/roopaish_',
+  },
+  {
+    title: 'Twitter',
+    href: 'https://twitter.com/roopaish_',
+  },
+  {
+    title: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/roopaish/',
   },
 ];

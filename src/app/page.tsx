@@ -5,6 +5,7 @@ import Section from '@/components/Section';
 import ServiceItem from '@/components/ServiceItem';
 import WorkListItem from '@/components/WorkListItems';
 import { galleryData, serviceData, workData } from '@/constants/data';
+import openURL from '@/utils/openURL';
 import { shimmerData } from '@/utils/shimmer';
 import useMount from '@/utils/useMount';
 import Image from 'next/image';
@@ -27,19 +28,20 @@ export default function Home() {
             My projects are a reflection of my passion for design and
             development.
           </p>
-          <section className="ml-auto flex h-[400px] w-full max-w-lg space-x-4 overflow-hidden">
+          <section className="group ml-auto flex h-[400px] w-full max-w-lg space-x-4 overflow-hidden">
             <div
               className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000 ${
                 mounted ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              {galleryData.slice(0, 5).map((img, i) => (
+              {galleryData.slice(0, 5).map((data, i) => (
                 <figure
-                  className="relative max-h-[320px] min-h-[320px] w-full animate-slideUp overflow-hidden grayscale filter"
+                  className="group-hover:pause relative max-h-[320px]  min-h-[320px] w-full animate-slideUp cursor-pointer overflow-hidden grayscale filter"
                   key={i}
+                  onClick={() => openURL(data!.href)}
                 >
                   <Image
-                    src={img}
+                    src={data!.img}
                     alt="gallery"
                     height={320}
                     width={248}
@@ -49,13 +51,14 @@ export default function Home() {
                   />
                 </figure>
               ))}
-              {galleryData.slice(0, 2).map((img, i) => (
+              {galleryData.slice(0, 2).map((data, i) => (
                 <figure
-                  className="relative max-h-[320px] min-h-[320px] w-full animate-slideUp overflow-hidden grayscale filter"
+                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideUp cursor-pointer overflow-hidden grayscale filter"
                   key={i}
+                  onClick={() => openURL(data!.href)}
                 >
                   <Image
-                    src={img}
+                    src={data!.img}
                     alt="gallery"
                     height={320}
                     width={248}
@@ -71,13 +74,14 @@ export default function Home() {
                 mounted ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              {galleryData.slice(5).map((img, i) => (
+              {galleryData.slice(5).map((data, i) => (
                 <figure
-                  className="relative max-h-[320px] min-h-[320px] w-full animate-slideDown overflow-hidden grayscale filter"
+                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideDown cursor-pointer overflow-hidden grayscale filter"
                   key={i}
+                  onClick={() => openURL(data!.href)}
                 >
                   <Image
-                    src={img}
+                    src={data!.img}
                     alt="gallery"
                     placeholder="blur"
                     blurDataURL={shimmerData(248, 320)}
@@ -87,13 +91,14 @@ export default function Home() {
                   />
                 </figure>
               ))}
-              {galleryData.slice(5, 7).map((img, i) => (
+              {galleryData.slice(5, 7).map((data, i) => (
                 <figure
-                  className="relative max-h-[320px] min-h-[320px] w-full animate-slideDown overflow-hidden grayscale filter"
+                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideDown cursor-pointer overflow-hidden grayscale filter"
                   key={i}
+                  onClick={() => openURL(data!.href)}
                 >
                   <Image
-                    src={img}
+                    src={data!.img}
                     alt="gallery"
                     placeholder="blur"
                     blurDataURL={shimmerData(248, 320)}
@@ -106,7 +111,7 @@ export default function Home() {
             </div>
           </section>
         </div>
-        <div className="mt-20 md:mt-0 md:flex-1">
+        <div className="mt-32 md:mt-0  md:flex-1">
           <h1
             className={`relative
             ${
