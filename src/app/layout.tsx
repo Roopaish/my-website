@@ -16,9 +16,9 @@ export default function RootLayout({
       <body
         className={`${rabenue.className} min-h-screen dark:bg-black dark:text-white`}
       >
-        <header className="text-xl md:text-2xl">
+        <header className="text-lg md:py-3 md:text-2xl">
           <div className="mx-auto flex max-w-7xl items-center justify-between bg-transparent p-4">
-            <Link href="/" className="font-medium uppercase">
+            <Link href="/" className="font-medium md:uppercase">
               Roopaish.
             </Link>
             <ul className="flex items-center space-x-4 uppercase">
