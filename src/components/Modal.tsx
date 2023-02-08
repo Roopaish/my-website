@@ -38,7 +38,7 @@ export default function Modal({
         ></div>
         <div className="fixed inset-0 flex items-center justify-center">
           <div
-            className={`rounded-md bg-white p-6 transition-all dark:bg-gray-900 dark:text-white ${
+            className={`rounded-md bg-gray-50 p-6 transition-all dark:bg-gray-900 dark:text-white ${
               isOpen ? 'scale-100' : 'scale-90'
             }
             ${variant === 'screen' ? 'h-full w-full' : ''}

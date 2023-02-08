@@ -14,7 +14,7 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body
-        className={`${rabenue.className} min-h-screen dark:bg-gray-900 dark:bg-opacity-95 dark:text-white`}
+        className={`${rabenue.className} min-h-screen dark:bg-black dark:text-white`}
       >
         <header className="text-xl md:text-2xl">
           <div className="mx-auto flex max-w-7xl items-center justify-between bg-transparent p-4">
@@ -57,7 +57,7 @@ export default function RootLayout({
           </div>
         </header>
         {children}
-        <footer className="bg-gray-50 p-10 dark:bg-gray-900 dark:text-white ">
+        <footer className="bg-gray-50 p-10 dark:bg-blueGray-dark dark:text-white ">
           <div>&copy;roopaish 2023</div>
           <div className="mt-4">
             <h1>Connect with me</h1>

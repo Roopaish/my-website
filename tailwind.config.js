@@ -4,6 +4,11 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        blueGray: {
+          dark: '#121517',
+        },
+      },
       fontFamily: {
         rabenue: ['var(--font-rabenue)', 'Inter', 'Helvetica', 'sans-serif'],
       },
