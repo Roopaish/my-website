@@ -36,7 +36,7 @@ export default function Home() {
             >
               {galleryData.slice(0, 5).map((data, i) => (
                 <figure
-                  className="group-hover:pause relative max-h-[320px]  min-h-[320px] w-full animate-slideUp cursor-pointer overflow-hidden grayscale filter"
+                  className="group-hover:pause relative max-h-[320px]  min-h-[320px] w-full animate-slideUp cursor-pointer overflow-hidden"
                   key={i}
                   onClick={() => openURL(data!.href)}
                 >
@@ -53,7 +53,7 @@ export default function Home() {
               ))}
               {galleryData.slice(0, 2).map((data, i) => (
                 <figure
-                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideUp cursor-pointer overflow-hidden grayscale filter"
+                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideUp cursor-pointer overflow-hidden"
                   key={i}
                   onClick={() => openURL(data!.href)}
                 >
@@ -76,7 +76,7 @@ export default function Home() {
             >
               {galleryData.slice(5).map((data, i) => (
                 <figure
-                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideDown cursor-pointer overflow-hidden grayscale filter"
+                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideDown cursor-pointer overflow-hidden"
                   key={i}
                   onClick={() => openURL(data!.href)}
                 >
@@ -93,7 +93,7 @@ export default function Home() {
               ))}
               {galleryData.slice(5, 7).map((data, i) => (
                 <figure
-                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideDown cursor-pointer overflow-hidden grayscale filter"
+                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideDown cursor-pointer overflow-hidden"
                   key={i}
                   onClick={() => openURL(data!.href)}
                 >
