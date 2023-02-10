@@ -17,10 +17,10 @@ export default function ServiceItem({
       <p>{subtitle}</p>
       <p className="mt-10 text-2xl">
         {technologies.map((technology, index) => (
-          <>
-            <span key={index}>{technology}</span>
+          <span key={index}>
+            <span>{technology}</span>
             {index !== technologies.length - 1 && <span> | </span>}
-          </>
+          </span>
         ))}
       </p>
       <p className="mt-5">{description}</p>

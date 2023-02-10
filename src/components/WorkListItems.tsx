@@ -27,7 +27,7 @@ export default function WorkListItem({
           alt={company}
           height={320}
           width={240}
-          className="object-contain"
+          className="object-contain w-auto h-auto"
         />
       </figure>
       <div className="relative">
