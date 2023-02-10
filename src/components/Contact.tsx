@@ -1,12 +1,13 @@
-import { contactData } from "@/constants/data";
+import { contactData } from '@/constants/data';
 
 export default function Contact() {
   return (
     <div className="flex flex-col gap-4">
       <p className="text-3xl">
-        Any project in mind? Feel free to discuss with me. I&apos;d
-        love to hear from you.
+        Any project in mind? Feel free to discuss with me. I&apos;d love to hear
+        from you.
       </p>
+
       <div className="text-2xl">
         <p>
           You can reach me at{' '}
@@ -27,6 +28,34 @@ export default function Contact() {
           ))}
         </ul>
       </div>
+
+      {/* <p className="mt-10">Send a quick message</p> */}
+      {/* <div className='max-w-lg'>
+        <form className="space-y-4" onSubmit={(e) => {
+          e.preventDefault();
+        }}>
+          <Input
+            label="Name"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <Input
+            label="Email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            label="Message"
+            name="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            textarea
+          />
+          <button className="" type="submit">Send message</button>
+        </form>
+      </div> */}
     </div>
   );
 }

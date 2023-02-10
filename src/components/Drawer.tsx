@@ -1,36 +1,41 @@
-import { ReactNode, useEffect } from "react";
-import Icon from "./icons";
+import { ReactNode, useEffect } from 'react';
+import Icon from './icons';
 
-export default function Drawer({ children, isOpen, setIsOpen }: {
+export default function Drawer({
+  children,
+  isOpen,
+  setIsOpen,
+}: {
   children: ReactNode;
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }) {
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = 'auto';
     }
   }, [isOpen]);
 
   return (
     <main
-      className={
-        `fixed overflow-hidden z-10 bg-gray-900 inset-0 transform ease-in-out bg-opacity-25 
-       ${isOpen
-          ? " transition-opacity opacity-100 duration-500 translate-x-0"
-          : " transition-all opacity-0 duration-500 translate-x-full"}
+      className={`fixed inset-0 z-10 transform overflow-hidden bg-gray-900 bg-opacity-25 ease-in-out 
+       ${
+         isOpen
+           ? ' translate-x-0 opacity-100 transition-opacity duration-500'
+           : ' translate-x-full opacity-0 transition-all duration-500'
+       }
       `}
     >
       <section
         className={
-          " w-screen max-w-lg right-0 absolute  bg-gray-50 dark:bg-gray-900 dark:text-white h-full shadow-xl duration-500 ease-in-out transition-all transform  " +
-          (isOpen ? " translate-x-0 " : " translate-x-full ")
+          ' absolute right-0 h-full w-screen  max-w-lg transform bg-gray-50 shadow-xl transition-all duration-500 ease-in-out dark:bg-gray-900 dark:text-white  ' +
+          (isOpen ? ' translate-x-0 ' : ' translate-x-full ')
         }
       >
-        <article className="relative w-screen max-w-lg pb-10 flex flex-col space-y-6 h-full">
-          <header className="px-4 pt-4 font-bold text-lg flex justify-between items-center">
+        <article className="relative flex h-full w-screen max-w-lg flex-col space-y-6 pb-10">
+          <header className="flex items-center justify-between px-4 pt-4 text-lg font-bold">
             <div></div>
             <button
               onClick={() => setIsOpen(false)}
@@ -47,7 +52,7 @@ export default function Drawer({ children, isOpen, setIsOpen }: {
         </article>
       </section>
       <section
-        className="w-screen h-full cursor-pointer "
+        className="h-full w-screen cursor-pointer "
         onClick={() => {
           setIsOpen(false);
         }}

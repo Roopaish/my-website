@@ -38,7 +38,7 @@ export default function Icon({
           sun: <SunIcon />,
           moon: <MoonIcon />,
           menu: <MenuIcon />,
-          'arrow-right': <ArrowRightIcon />
+          'arrow-right': <ArrowRightIcon />,
         }[type]
       }
     </svg>

@@ -28,10 +28,13 @@ export default function Modal({
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className={className}>{trigger}</button>
+      <button onClick={() => setIsOpen(true)} className={className}>
+        {trigger}
+      </button>
       <div
-        className={`absolute z-50 transition-opacity ${isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
-          }`}
+        className={`absolute z-50 transition-opacity ${
+          isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
+        }`}
       >
         <div
           className="fixed inset-0 bg-black opacity-50"
@@ -39,8 +42,9 @@ export default function Modal({
         ></div>
         <div className="fixed inset-0 flex items-center justify-center">
           <div
-            className={`rounded-md bg-gray-50 p-6 transition-all dark:bg-gray-900 dark:text-white ${isOpen ? 'scale-100' : 'scale-90'
-              }
+            className={`flex flex-col rounded-md bg-gray-50 p-6 transition-all dark:bg-gray-900 dark:text-white ${
+              isOpen ? 'scale-100' : 'scale-90'
+            }
             ${variant === 'screen' ? 'h-full w-full' : ''}
             `}
           >
@@ -57,7 +61,9 @@ export default function Modal({
                 />
               </button>
             </header>
-            <main className="py-20">{children}</main>
+            <main className="slick-scroll-bar flex-1 overflow-y-auto py-20">
+              {children}
+            </main>
           </div>
         </div>
       </div>

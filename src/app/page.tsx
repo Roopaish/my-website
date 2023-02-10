@@ -22,8 +22,9 @@ export default function Home() {
         className={`relative flex min-h-screen flex-col-reverse justify-between md:flex-row md:space-x-4 md:pt-40 `}
       >
         <div
-          className={`relative mt-40 text-right md:mt-0 md:flex-1 ${mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
-            } transition-positionOpacity duration-1000`}
+          className={`relative mt-40 text-right md:mt-0 md:flex-1 ${
+            mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
+          } transition-positionOpacity duration-1000`}
         >
           <h1>Gallery</h1>
           <p className="text-2xl">
@@ -32,12 +33,13 @@ export default function Home() {
           </p>
           <section className="group ml-auto flex h-[400px] w-full max-w-lg space-x-4 overflow-hidden">
             <div
-              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000 ${mounted ? 'opacity-100' : 'opacity-0'
-                }`}
+              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000 ${
+                mounted ? 'opacity-100' : 'opacity-0'
+              }`}
             >
               {galleryData.slice(0, 5).map((data, i) => (
                 <figure
-                  className="group-hover:pause relative max-h-[320px]  min-h-[320px] w-full animate-slideUp cursor-pointer overflow-hidden hover:p-2 transition-all"
+                  className="group-hover:pause relative max-h-[320px]  min-h-[320px] w-full animate-slideUp cursor-pointer overflow-hidden transition-all hover:p-2"
                   key={i}
                   onClick={() => openURL(data!.href)}
                 >
@@ -54,7 +56,7 @@ export default function Home() {
               ))}
               {galleryData.slice(0, 2).map((data, i) => (
                 <figure
-                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideUp cursor-pointer overflow-hidden hover:p-2 transition-all"
+                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideUp cursor-pointer overflow-hidden transition-all hover:p-2"
                   key={i}
                   onClick={() => openURL(data!.href)}
                 >
@@ -71,12 +73,13 @@ export default function Home() {
               ))}
             </div>
             <div
-              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000  ${mounted ? 'opacity-100' : 'opacity-0'
-                }`}
+              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000  ${
+                mounted ? 'opacity-100' : 'opacity-0'
+              }`}
             >
               {galleryData.slice(5).map((data, i) => (
                 <figure
-                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideDown cursor-pointer overflow-hidden hover:p-2 transition-all"
+                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideDown cursor-pointer overflow-hidden transition-all hover:p-2"
                   key={i}
                   onClick={() => openURL(data!.href)}
                 >
@@ -93,7 +96,7 @@ export default function Home() {
               ))}
               {galleryData.slice(5, 7).map((data, i) => (
                 <figure
-                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideDown cursor-pointer overflow-hidden hover:p-2 transition-all"
+                  className="group-hover:pause relative max-h-[320px] min-h-[320px] w-full animate-slideDown cursor-pointer overflow-hidden transition-all hover:p-2"
                   key={i}
                   onClick={() => openURL(data!.href)}
                 >
@@ -114,8 +117,9 @@ export default function Home() {
         <div className="mt-32 md:mt-0  md:flex-1">
           <h1
             className={`relative
-            ${mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
-              } transition-positionOpacity duration-1000
+            ${
+              mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
+            } transition-positionOpacity duration-1000
             `}
           >
             Software Engineer
@@ -124,15 +128,17 @@ export default function Home() {
             <p>
               <span
                 className={`relative text-5xl
-            ${mounted ? 'top-0 opacity-100' : 'top-1 opacity-0'
-                  } transition-positionOpacity duration-500`}
+            ${
+              mounted ? 'top-0 opacity-100' : 'top-1 opacity-0'
+            } transition-positionOpacity duration-500`}
               >
                 Full-stack developer
               </span>{' '}
               <span
                 className={`relative
-            ${mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
-                  } transition-positionOpacity duration-1000
+            ${
+              mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
+            } transition-positionOpacity duration-1000
             `}
               >
                 specialized in Flutter, React and Node.
@@ -156,12 +162,26 @@ export default function Home() {
               build dynamic and interactive web and mobile applications that
               meet the highest standards of quality.
             </p>
-            <div className={`pt-10 md:hidden block  ${mounted ? 'opacity-100' : 'opacity-0'} transition-opacity delay-700 duration-1000`}>
+            <div
+              className={`block pt-10 md:hidden  ${
+                mounted ? 'opacity-100' : 'opacity-0'
+              } transition-opacity delay-700 duration-1000`}
+            >
               Any projects in mind?
-              <Modal className='md:hidden block' trigger={<div className='flex items-center group space-x-1'>
-                <span>LET&apos;S TALK</span>
-                <Icon type="arrow-right" className='rotate-0 group-hover:-rotate-45 transition-all' />
-              </div>} variant="screen" title="Let's talk">
+              <Modal
+                className="block md:hidden"
+                trigger={
+                  <div className="group flex items-center space-x-1">
+                    <span>LET&apos;S TALK</span>
+                    <Icon
+                      type="arrow-right"
+                      className="rotate-0 transition-all group-hover:-rotate-45"
+                    />
+                  </div>
+                }
+                variant="screen"
+                title="Let's talk"
+              >
                 <Contact />
               </Modal>
             </div>

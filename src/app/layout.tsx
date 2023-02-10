@@ -35,21 +35,39 @@ export default function RootLayout({
               </li>
             </ul>
 
-            <Modal className='md:block hidden' trigger={<div className='flex items-center group space-x-1'>
-              <span>LET&apos;S TALK</span>
-              <Icon type="arrow-right" className='rotate-0 group-hover:-rotate-45 transition-all' />
-            </div>} variant="screen" title="Let's talk">
+            <Modal
+              className="hidden md:block"
+              trigger={
+                <div className="group flex items-center space-x-1">
+                  <span>LET&apos;S TALK</span>
+                  <Icon
+                    type="arrow-right"
+                    className="rotate-0 transition-all duration-500 ease-in-out group-hover:-rotate-45"
+                  />
+                </div>
+              }
+              variant="screen"
+              title="Let's talk"
+            >
               <Contact />
             </Modal>
 
-            <button className="md:hidden block" onClick={() => setIsMenuOpen(true)} >
-              <Icon type='menu' />
+            <button
+              className="block md:hidden"
+              onClick={() => setIsMenuOpen(true)}
+            >
+              <Icon type="menu" />
             </button>
 
             <Drawer isOpen={isMenuOpen} setIsOpen={setIsMenuOpen}>
-              <ul className="items-center space-x-4 uppercase md:hidden pt-10" onClick={() => setIsMenuOpen(false)}>
-                <li className='p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-sm'>
-                  <Link href="/blogs" className='block'>Blogs</Link>
+              <ul
+                className="items-center space-x-4 pt-10 uppercase md:hidden"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <li className="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                  <Link href="/blogs" className="block">
+                    Blogs
+                  </Link>
                 </li>
               </ul>
             </Drawer>

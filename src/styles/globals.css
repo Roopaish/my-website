@@ -20,6 +20,15 @@
     background-color: #4a5568;
   }
 
+  .slick-scroll-bar::-webkit-scrollbar {
+    width: 4px;
+    @apply rounded-sm;
+  }
+
+  .slick-scroll-bar::-webkit-scrollbar-thumb {
+    @apply rounded-sm;
+  }
+
   .pause {
     animation-play-state: paused;
   }
