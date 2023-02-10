@@ -8,5 +8,5 @@ export default function useMount() {
     return () => setMounted(false);
   }, []);
 
-  return [mounted, setMounted];
+  return mounted;
 }

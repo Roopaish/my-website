@@ -8,11 +8,13 @@ export default function Modal({
   children,
   variant,
   title,
+  className,
 }: {
   trigger: React.ReactNode;
   children: React.ReactNode;
   variant?: 'default' | 'small' | 'screen';
   title?: string;
+  className?: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,11 +28,10 @@ export default function Modal({
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)}>{trigger}</button>
+      <button onClick={() => setIsOpen(true)} className={className}>{trigger}</button>
       <div
-        className={`absolute z-50 transition-opacity ${
-          isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
-        }`}
+        className={`absolute z-50 transition-opacity ${isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
+          }`}
       >
         <div
           className="fixed inset-0 bg-black opacity-50"
@@ -38,9 +39,8 @@ export default function Modal({
         ></div>
         <div className="fixed inset-0 flex items-center justify-center">
           <div
-            className={`rounded-md bg-gray-50 p-6 transition-all dark:bg-gray-900 dark:text-white ${
-              isOpen ? 'scale-100' : 'scale-90'
-            }
+            className={`rounded-md bg-gray-50 p-6 transition-all dark:bg-gray-900 dark:text-white ${isOpen ? 'scale-100' : 'scale-90'
+              }
             ${variant === 'screen' ? 'h-full w-full' : ''}
             `}
           >

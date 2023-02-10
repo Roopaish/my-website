@@ -1,9 +1,11 @@
+import ArrowRightIcon from './arrow-right.icon';
 import CrossIcon from './cross.icon';
+import MenuIcon from './menu.icon';
 import MoonIcon from './moon.icon';
 import SunIcon from './sun.icon';
 
 type IconType = {
-  type: 'cross' | 'sun' | 'moon';
+  type: 'cross' | 'sun' | 'moon' | 'menu' | 'arrow-right';
   size?: number;
   color?: string;
   className?: string;
@@ -22,7 +24,7 @@ export default function Icon({
       xmlns="http://www.w3.org/2000/svg"
       width={size || '24'}
       height={size || '24'}
-      className={className}
+      className={`inline-block ${className}`}
       viewBox="0 0 24 24"
       fill="none"
       stroke={color || 'currentColor'}
@@ -35,6 +37,8 @@ export default function Icon({
           cross: <CrossIcon />,
           sun: <SunIcon />,
           moon: <MoonIcon />,
+          menu: <MenuIcon />,
+          'arrow-right': <ArrowRightIcon />
         }[type]
       }
     </svg>
