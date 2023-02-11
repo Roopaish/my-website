@@ -14,17 +14,15 @@ export default function Blogs() {
           Get latest blogs about programming and new technologies.
         </p>
       </section>
-      <section className='mt-10'>
-        <ul className='grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 gap-4'>
-          {
-            blogsMetaData.map((data) => (
-              <li key={data.slug} className="block h-full">
-                <Link href={`/blogs/${data.slug}`} className="block h-full">
-                  <BlogListItem className='h-full' {...data} />
-                </Link>
-              </li>
-            ))
-          }
+      <section className="mt-10">
+        <ul className="grid grid-cols-1 gap-4  sm:grid-cols-2 md:grid-cols-3">
+          {blogsMetaData.map((data) => (
+            <li key={data.slug} className="block h-full">
+              <Link href={`/blogs/${data.slug}`} className="block h-full">
+                <BlogListItem className="h-full" {...data} />
+              </Link>
+            </li>
+          ))}
         </ul>
       </section>
     </Page>

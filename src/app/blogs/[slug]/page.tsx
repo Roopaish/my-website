@@ -1,4 +1,5 @@
 import BlogListItem from '@/components/BlogListItem';
+import CodeBlock from '@/components/CodeBlock';
 import Page from '@/components/Page';
 import { BlogMetaData, getBlogsMetadata } from '@/utils/getBlogsMetadata';
 import fs from 'fs';
@@ -14,7 +15,7 @@ function getBlogContent(slug: string): BlogMetaData {
     date: matterResult.data.date,
     subtitle: matterResult.data.subtitle,
     content: matterResult.content,
-  }
+  };
 }
 
 export async function generateStaticParams() {
@@ -28,12 +29,27 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
 
   return (
     <Page>
-      <section className='w-full bg-gray-50 p-6 text-center dark:bg-blueGray-dark'>
+      <section className="w-full bg-gray-50 p-6 text-center dark:bg-blueGray-dark">
         <BlogListItem title={title} date={date} subtitle={subtitle} />
       </section>
-      <main className='mt-10 mb-40 mx-auto'>
-        <article className='prose lg:prose-xl mx-auto max-w-4xl dark:text-white prose-headings:dark:text-white'>
-          <ReactMarkdown>
+      <main className="mx-auto mt-10 mb-40">
+        <article className="prose mx-auto max-w-4xl prose-code:bg-transparent prose-pre:bg-transparent prose-pre:p-0 dark:text-white prose-headings:dark:text-white md:prose-xl">
+          <ReactMarkdown
+            components={{
+              pre({ children }) {
+                return <div>{children}</div>;
+              },
+
+              code({ className, children }) {
+                const language = className?.split('-')[1];
+                return (
+                  <CodeBlock language={language ?? 'bash'}>
+                    {children.toString()}
+                  </CodeBlock>
+                );
+              },
+            }}
+          >
             {content!}
           </ReactMarkdown>
         </article>

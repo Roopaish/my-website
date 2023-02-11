@@ -165,7 +165,7 @@ Update rootDir and outDir in tsconfig
 }
 ```
 
-Now type in these commands to compile and watch the js file `tsc` or `tsc -W`.
+Now type in these commands to compile and watch the js file `tsc` or `tsc -W`
 
 ## Function Basis
 
