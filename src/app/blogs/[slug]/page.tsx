@@ -32,7 +32,7 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
         <BlogListItem title={title} date={date} subtitle={subtitle} />
       </section>
       <main className='mt-10 mb-40 mx-auto'>
-        <article className='prose md:prose-xl mx-auto max-w-4xl'>
+        <article className='prose lg:prose-xl mx-auto max-w-4xl dark:text-white prose-headings:dark:text-white'>
           <ReactMarkdown>
             {content!}
           </ReactMarkdown>
