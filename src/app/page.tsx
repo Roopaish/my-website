@@ -190,7 +190,7 @@ export default function Home() {
       </section>
 
       <Section>
-        <h1>Works</h1>
+        <h1>Experiences</h1>
         <ul className="space-y-6">
           {workData.map((work, i) => (
             <WorkListItem key={i} {...work} />
