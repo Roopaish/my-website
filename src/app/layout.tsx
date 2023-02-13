@@ -90,8 +90,10 @@ export default function RootLayout({
               ))}
             </ul>
           </div>
-
-          <ThemeSwitcher />
+          <div className='flex gap-4'>
+            <ThemeSwitcher />
+            <a href="https://github.com/Roopaish/my-website" target="_blank" rel="noreferrer"><Icon type="github" /></a>
+          </div>
         </footer>
       </body>
     </html>
