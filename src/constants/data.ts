@@ -1,3 +1,4 @@
+import { ProjectItemType } from '@/components/ProjectItem';
 import { ServiceItemType } from '@/components/ServiceItem';
 import { WorkListItemType } from '@/components/WorkListItems';
 
@@ -127,4 +128,35 @@ export const contactData = [
     title: 'LinkedIn',
     href: 'https://www.linkedin.com/in/roopaish/',
   },
+];
+
+export const featuredProjects: ProjectItemType[] = [
+  {
+    title: 'Flutter Roadmap',
+    description:
+      'Flutter notes, Quiz App, Meals App, Expense App, Shop App, Great Places App and Chat App',
+    href: 'https://flutter-roadmap.netlify.app/#/',
+    github: 'https://github.com/Roopaish/Flutter-RoadMap',
+    img: '/images/gallery/apps.png',
+  },
+  {
+    title: 'CSS Roadmap',
+    description:
+      'CSS Buttons, Hover Effects, Animations, Emoji, Tooltips, Landing Page, Youtube Clone',
+    href: 'https://roopaish.github.io/CSS-RoadMap/',
+    github: 'https://github.com/Roopaish/Flutter-RoadMap',
+    img: '/images/gallery/youtube_redesign.png',
+  },
+  // {
+  //   title: 'Ease Commerce',
+  //   description:
+  //     'Search and Compare products across multiple e-commerce sites like Daraz and Amazon',
+  //   github: 'https://github.com/Roopaish/ease_commerce_web',
+  // },
+  // {
+  //   title: 'Post it',
+  //   description:
+  //     'A full-stack social media app built with React, Node, Express, and PostgreSQL.',
+  //   github: 'https://github.com/Roopaish/post_it-PERN',
+  // },
 ];

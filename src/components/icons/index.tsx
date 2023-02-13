@@ -1,12 +1,13 @@
 import ArrowRightIcon from './arrow-right.icon';
 import CrossIcon from './cross.icon';
 import GithubIcon from './github.icon';
+import LinkIcon from './link.icon';
 import MenuIcon from './menu.icon';
 import MoonIcon from './moon.icon';
 import SunIcon from './sun.icon';
 
 type IconType = {
-  type: 'cross' | 'sun' | 'moon' | 'menu' | 'arrow-right' | 'github';
+  type: 'cross' | 'sun' | 'moon' | 'menu' | 'arrow-right' | 'github' | 'link';
   size?: number;
   color?: string;
   className?: string;
@@ -40,7 +41,8 @@ export default function Icon({
           moon: <MoonIcon />,
           menu: <MenuIcon />,
           'arrow-right': <ArrowRightIcon />,
-          github: <GithubIcon />
+          github: <GithubIcon />,
+          link: <LinkIcon />
         }[type]
       }
     </svg>

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
 
-export default function Section({ children }: { children: ReactNode }) {
-  return <section className="min-h-screen pt-40">{children}</section>;
+export default function Section({ children, className }: { children: ReactNode; className?: string }) {
+  return <section className={`min-h-screen pt-40 ${className}`}>{children}</section>;
 }
