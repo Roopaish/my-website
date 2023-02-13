@@ -42,7 +42,7 @@ export default function Icon({
           menu: <MenuIcon />,
           'arrow-right': <ArrowRightIcon />,
           github: <GithubIcon />,
-          link: <LinkIcon />
+          link: <LinkIcon />,
         }[type]
       }
     </svg>
