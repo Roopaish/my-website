@@ -12,7 +12,7 @@ import {
   featuredProjects,
   galleryData,
   serviceData,
-  workData,
+  workData
 } from '@/constants/data';
 import openURL from '@/utils/openURL';
 import { shimmerData } from '@/utils/shimmer';
@@ -28,9 +28,8 @@ export default function Home() {
         className={`relative flex min-h-screen flex-col-reverse justify-between md:flex-row md:space-x-4 md:pt-40 `}
       >
         <div
-          className={`relative mt-40 text-right md:mt-0 md:flex-1 ${
-            mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
-          } transition-positionOpacity duration-1000`}
+          className={`relative mt-40 text-right md:mt-0 md:flex-1 ${mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
+            } transition-positionOpacity duration-1000`}
         >
           <h1>Gallery</h1>
           <p className="text-2xl">
@@ -39,9 +38,8 @@ export default function Home() {
           </p>
           <section className="group ml-auto flex h-[400px] w-full max-w-lg space-x-4 overflow-hidden">
             <div
-              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000 ${
-                mounted ? 'opacity-100' : 'opacity-0'
-              }`}
+              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000 ${mounted ? 'opacity-100' : 'opacity-0'
+                }`}
             >
               {galleryData.slice(0, 5).map((data, i) => (
                 <figure
@@ -79,9 +77,8 @@ export default function Home() {
               ))}
             </div>
             <div
-              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000  ${
-                mounted ? 'opacity-100' : 'opacity-0'
-              }`}
+              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000  ${mounted ? 'opacity-100' : 'opacity-0'
+                }`}
             >
               {galleryData.slice(5).map((data, i) => (
                 <figure
@@ -123,9 +120,8 @@ export default function Home() {
         <div className="mt-32 md:mt-0  md:flex-1">
           <h1
             className={`relative
-            ${
-              mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
-            } transition-positionOpacity duration-1000
+            ${mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
+              } transition-positionOpacity duration-1000
             `}
           >
             Software Engineer
@@ -134,17 +130,15 @@ export default function Home() {
             <p>
               <span
                 className={`relative text-5xl
-            ${
-              mounted ? 'top-0 opacity-100' : 'top-1 opacity-0'
-            } transition-positionOpacity duration-500`}
+            ${mounted ? 'top-0 opacity-100' : 'top-1 opacity-0'
+                  } transition-positionOpacity duration-500`}
               >
                 Full-stack developer
               </span>{' '}
               <span
                 className={`relative
-            ${
-              mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
-            } transition-positionOpacity duration-1000
+            ${mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
+                  } transition-positionOpacity duration-1000
             `}
               >
                 specialized in Flutter, React and Node.
@@ -170,18 +164,17 @@ export default function Home() {
               meet the highest standards of quality.
             </p>
             <div
-              className={`block pt-10 md:hidden  ${
-                mounted ? 'opacity-100' : 'opacity-0'
-              } transition-opacity delay-700 duration-1000`}
+              className={`block pt-10 md:hidden  ${mounted ? 'opacity-100' : 'opacity-0'
+                } transition-opacity delay-700 duration-1000`}
             >
               Any projects in mind?
               <Modal
                 className="block md:hidden"
                 trigger={
                   <div className="group flex items-center space-x-1">
-                    <span>LET&apos;S TALK</span>
+                    <span>Let&apos;s talk</span>
                     <Icon
-                      type="arrow-right"
+                      type="arrow"
                       className="rotate-0 transition-all group-hover:-rotate-45"
                     />
                   </div>
@@ -208,9 +201,9 @@ export default function Home() {
       {/* TODO: Carousel */}
       <Section className="mt-10 text-center">
         <h1>Featured Projects</h1>
-        <ul className="mx-auto flex max-w-xs place-content-center items-center justify-center gap-4 md:max-w-2xl">
+        <ul className="mx-auto flex flex-wrap place-content-center items-center justify-center gap-4 md:max-w-2xl">
           {featuredProjects.map((p, i) => (
-            <li key={p.title} className={`relative mx-auto w-full`}>
+            <li key={p.title} className={`relative mx-auto w-full  max-w-xs`}>
               <ProjectItem {...p} />
             </li>
           ))}

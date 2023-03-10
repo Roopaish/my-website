@@ -1,4 +1,5 @@
-import ArrowRightIcon from './arrow-right.icon';
+import ArrowIcon from './arrow.icon';
+import ChevronIcon from './chevron.icon';
 import CrossIcon from './cross.icon';
 import GithubIcon from './github.icon';
 import LinkIcon from './link.icon';
@@ -7,11 +8,12 @@ import MoonIcon from './moon.icon';
 import SunIcon from './sun.icon';
 
 type IconType = {
-  type: 'cross' | 'sun' | 'moon' | 'menu' | 'arrow-right' | 'github' | 'link';
+  type: 'cross' | 'sun' | 'moon' | 'menu' | 'chevron' | 'github' | 'link' | 'arrow';
   size?: number;
   color?: string;
   className?: string;
   strokeWidth?: number;
+  variant?: 'up' | 'down' | 'left' | 'right';
 };
 
 export default function Icon({
@@ -20,6 +22,7 @@ export default function Icon({
   color,
   className,
   strokeWidth,
+  variant,
 }: IconType) {
   return (
     <svg
@@ -40,9 +43,10 @@ export default function Icon({
           sun: <SunIcon />,
           moon: <MoonIcon />,
           menu: <MenuIcon />,
-          'arrow-right': <ArrowRightIcon />,
+          arrow: <ArrowIcon />,
           github: <GithubIcon />,
           link: <LinkIcon />,
+          chevron: <ChevronIcon variant={variant ?? "right"} />,
         }[type]
       }
     </svg>

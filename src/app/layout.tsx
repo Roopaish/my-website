@@ -25,13 +25,20 @@ export default function RootLayout({
       >
         <header className={`text-lg md:py-3 md:text-2xl`}>
           <div className="mx-auto flex max-w-7xl items-center justify-between bg-transparent p-4">
-            <Link href="/" className="font-medium uppercase">
-              Roopaish
+            <Link href="/" className="font-medium relative">
+              Roopaish.
+              {/* <div className=''>
+                <img src="https://avatars.githubusercontent.com/u/54392112?v=4" alt="roopaish" className='w-32 rounded-full absolute -top-1/2' style={{
+                  borderImage: "url(https://skullctf.com/images/skull-border.svg)",
+                  borderImageSlice: '32',
+                  borderImageRepeat: "round",
+                }} />
+              </div> */}
             </Link>
 
-            <ul className="hidden items-center space-x-4 uppercase md:flex">
+            <ul className="hidden items-center space-x-4 md:flex">
               <li>
-                <Link href="/blogs">Blogs</Link>
+                <Link href="/blogs">Blogs.</Link>
               </li>
             </ul>
 
@@ -39,9 +46,9 @@ export default function RootLayout({
               className="hidden md:block"
               trigger={
                 <div className="group flex items-center space-x-1">
-                  <span>LET&apos;S TALK</span>
+                  <span>Let&apos;s talk</span>
                   <Icon
-                    type="arrow-right"
+                    type="arrow"
                     className="rotate-0 transition-all duration-500 ease-in-out group-hover:-rotate-45"
                   />
                 </div>

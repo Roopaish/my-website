@@ -14,7 +14,7 @@ export default function ProjectItem(p: ProjectItemType) {
     <div className="relative w-full">
       <a
         href={p.href ?? p.github}
-        className="group relative flex h-60 w-full cursor-pointer flex-col justify-end overflow-hidden bg-gray-50 p-6 text-center text-white dark:bg-blueGray-dark md:h-96"
+        className="group relative flex h-60 w-full cursor-pointer flex-col justify-end overflow-hidden p-6 text-center text-white bg-blueGray-dark md:h-96"
         target="_blank"
         rel="noreferrer"
       >
