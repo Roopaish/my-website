@@ -19,7 +19,7 @@ import useMount from '@/utils/useMount';
 import Image from 'next/image';
 
 export default function Home() {
-  const mounted = useMount();
+  // const mounted = useMount();
 
   return (
     <Page>
@@ -27,8 +27,7 @@ export default function Home() {
         className={`relative flex min-h-screen flex-col-reverse justify-between md:flex-row md:space-x-4 md:pt-40 `}
       >
         <div
-          className={`relative mt-40 text-right md:mt-0 md:flex-1 ${mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
-            } transition-positionOpacity duration-1000`}
+          className={`relative mt-40 text-right md:mt-0 md:flex-1 transition-positionOpacity duration-1000`}
         >
           <h1>Gallery</h1>
           <p className="text-2xl">
@@ -37,8 +36,7 @@ export default function Home() {
           </p>
           <section className="group ml-auto flex h-[400px] w-full max-w-lg space-x-4 overflow-hidden">
             <div
-              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000 ${mounted ? 'opacity-100' : 'opacity-0'
-                }`}
+              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000 `}
             >
               {galleryData.slice(0, 5).map((data, i) => (
                 <figure
@@ -76,8 +74,7 @@ export default function Home() {
               ))}
             </div>
             <div
-              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000  ${mounted ? 'opacity-100' : 'opacity-0'
-                }`}
+              className={`flex w-full flex-col space-y-4 transition-opacity delay-500 duration-1000  `}
             >
               {galleryData.slice(5).map((data, i) => (
                 <figure
@@ -119,8 +116,6 @@ export default function Home() {
         <div className="mt-32 md:mt-0  md:flex-1">
           <h1
             className={`relative
-            ${mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
-              } transition-positionOpacity duration-1000
             `}
           >
             Software Engineer
@@ -128,34 +123,23 @@ export default function Home() {
           <div className="space-y-4 text-2xl">
             <p>
               <span
-                className={`relative text-5xl
-            ${mounted ? 'top-0 opacity-100' : 'top-1 opacity-0'
-                  } transition-positionOpacity duration-500`}
+                className={`relative text-5xl`}
               >
                 Full-stack developer
               </span>{' '}
               <span
-                className={`relative
-            ${mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'
-                  } transition-positionOpacity duration-1000
-            `}
+                className={`relative transition-positionOpacity duration-1000`}
               >
                 specialized in Flutter, React and Node.
               </span>
             </p>
             <p
-              className={`relative pt-10
-            ${mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'}
-            transition-positionOpacity delay-100 duration-1000
-            `}
+              className={`relative pt-10`}
             >
               Based in Nepal
             </p>
             <p
-              className={`relative 
-            ${mounted ? 'top-0 opacity-100' : 'top-2 opacity-0'}
-            transition-positionOpacity delay-300 duration-1000
-            `}
+              className={`relative transition-positionOpacity delay-300 duration-1000 `}
             >
               I am <span className="text-3xl uppercase">Rupesh Budhathoki</span>{' '}
               and as a proficient developer with attention to detail, I like to
@@ -163,8 +147,7 @@ export default function Home() {
               meet the highest standards of quality.
             </p>
             <div
-              className={`block pt-10 md:hidden  ${mounted ? 'opacity-100' : 'opacity-0'
-                } transition-opacity delay-700 duration-1000`}
+              className={`block pt-10 md:hidden  transition-opacity delay-700 duration-1000`}
             >
               Any projects in mind?
               <Modal
