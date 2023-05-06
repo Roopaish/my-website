@@ -3,11 +3,13 @@ import { ReactNode } from 'react';
 export default function Section({
   children,
   className,
+  id
 }: {
   children: ReactNode;
   className?: string;
+  id:string;
 }) {
   return (
-    <section className={`min-h-screen pt-40 ${className}`}>{children}</section>
+    <section id={id} className={`pt-40 ${className}`}>{children}</section>
   );
 }

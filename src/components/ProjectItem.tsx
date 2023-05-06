@@ -6,43 +6,52 @@ export type ProjectItemType = {
   description: string;
   img: string;
   href?: string;
-  github: string;
+  github?: string;
+  skills: string[];
 };
 
 export default function ProjectItem(p: ProjectItemType) {
   return (
     <div className="relative w-full">
       <a
-        href={p.href ?? p.github}
-        className="group relative flex h-60 w-full cursor-pointer flex-col justify-end overflow-hidden p-6 text-center text-white bg-blueGray-dark md:h-96"
+        href={p.href ?? p.github ?? ""}
+        className="group relative w-full cursor-pointer overflow-hidden"
         target="_blank"
         rel="noreferrer"
       >
-        <figure className="absolute inset-0 w-full md:transition-position md:duration-1000 group-hover:md:-top-1/2">
+        <figure className="w-full relative  h-60 sm:h-96">
           <Image
             src={p.img}
-            width={200}
-            height={384}
             alt={p.title}
-            className="h-auto w-full"
+            fill
+            className="object-cover h-full w-full object-top"
           />
+          <div className="absolute left-4 right-4 bottom-4 flex flex-wrap gap-2">
+            {
+              p.skills?.map((s) => (
+                <div key={s} className="bg-zinc-100 px-3 py-1 rounded-full text-black shadow-inner">
+                  {s}
+                </div>
+              ))
+            }
+          </div>
         </figure>
-        <div className="absolute bottom-0 left-0 right-0 -top-10 bg-opacity-70 bg-gradient-to-t from-blueGray-dark group-hover:top-1/2 md:top-0 md:transition-position"></div>
-        <div className="relative">
-          <h2 className="text-2xl">{p.title}</h2>
-          <p className="hidden text-lg md:mt-5 md:block">{p.description}</p>
-        </div>
+        {/* <div className="absolute bottom-0 left-0 right-0 -top-10 bg-opacity-70 bg-gradient-to-t from-blueGray-dark group-hover:top-1/2 md:top-0 md:transition-position"></div> */}
+
+        <h2 className="text-3xl md:text-4xl font-medium">{p.title}</h2>
+        <p className="text-xl leading-tight">{p.description}</p>
       </a>
-      {p.href && (
+      {p.github && (
         <a
           href={p.github}
           target="_blank"
           rel="noreferrer"
           className="absolute top-0 right-0 flex items-center justify-center bg-black p-4"
         >
-          <Icon type="github" />
+          <Icon type="github" color="white" />
         </a>
       )}
+
     </div>
   );
 }

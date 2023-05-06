@@ -2,14 +2,36 @@
 
 import Contact from '@/components/Contact';
 import Drawer from '@/components/Drawer';
-import Icon from '@/components/icons';
 import Modal from '@/components/Modal';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
+import Icon from '@/components/icons';
 import { contactData } from '@/constants/data';
 import { rabenue } from '@/utils/localFonts';
 import Link from 'next/link';
 import { useState } from 'react';
 import '../styles/globals.css';
+
+const navItems = [
+  {
+    href: '/blogs',
+    name: "Blogs"
+  }, {
+    href: "/#projects",
+    name: "Projects"
+  },
+  {
+    href: "/#services",
+    name: "Services"
+  },
+  {
+    href: "/#tech",
+    name: "TechStack"
+  },
+  {
+    href: "/#experiences",
+    name: "Experiences"
+  }
+];
 
 export default function RootLayout({
   children,
@@ -18,7 +40,7 @@ export default function RootLayout({
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head />
       <body
         className={`${rabenue.className} min-h-screen dark:bg-black dark:text-white`}
@@ -37,9 +59,16 @@ export default function RootLayout({
             </Link>
 
             <ul className="hidden items-center space-x-4 md:flex">
-              <li>
-                <Link href="/blogs">Blogs.</Link>
-              </li>
+              {
+                navItems.map((n) => (
+                  <li key={n.href} className="lowercase">
+                   {
+                   n.name == "Blogs" ?  <Link href={n.href}>{n.name}.</Link> :
+                   <a href={n.href}>{n.name}.</a>
+                   }
+                  </li>
+                ))
+              }
             </ul>
 
             <Modal
@@ -68,14 +97,19 @@ export default function RootLayout({
 
             <Drawer isOpen={isMenuOpen} setIsOpen={setIsMenuOpen}>
               <ul
-                className="items-center space-x-4 pt-10 uppercase md:hidden"
+                className="items-center space-y-4 pt-10 uppercase md:hidden"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <li className="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-800">
-                  <Link href="/blogs" className="block">
-                    Blogs
-                  </Link>
-                </li>
+              {
+                navItems.map((n) => (
+                  <li key={n.href} className="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                   {
+                   n.name == "Blogs" ? <Link href={n.href} className="block">{n.name}.</Link> :
+                   <a href={n.href} className="block">{n.name}.</a>
+                   }
+                  </li>
+                ))
+              }
               </ul>
             </Drawer>
           </div>
@@ -83,7 +117,7 @@ export default function RootLayout({
 
         {children}
 
-        <footer className="bg-gray-50 p-10 dark:bg-blueGray-dark dark:text-white ">
+        <footer className="bg-gray-50 mt-32 p-10 dark:bg-blueGray-dark dark:text-white ">
           <div>&copy;roopaish 2023</div>
           <div className="mt-4">
             <h1>Connect with me</h1>

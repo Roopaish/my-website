@@ -5,7 +5,7 @@ export type WorkListItemType = {
   title: string;
   date: string;
   type: 'Remote' | 'Hybrid' | 'Office';
-  timing: 'Full time' | 'Part time' | 'Contract' | 'Freelance';
+  timing: 'Full time' | 'Part time' | 'Contract' | 'Freelance' | 'Self-Employed';
   company: string;
   image?: string;
 };

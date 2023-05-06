@@ -15,7 +15,6 @@ import {
   workData
 } from '@/constants/data';
 import openURL from '@/utils/openURL';
-import { shimmerData } from '@/utils/shimmer';
 import useMount from '@/utils/useMount';
 import Image from 'next/image';
 
@@ -52,8 +51,8 @@ export default function Home() {
                     alt="gallery"
                     height={320}
                     width={248}
-                    placeholder="blur"
-                    blurDataURL={shimmerData(248, 320)}
+                    // placeholder="blur"
+                    // blurDataURL={shimmerData(248, 320)}
                     className="h-full w-full object-cover"
                   />
                 </figure>
@@ -69,8 +68,8 @@ export default function Home() {
                     alt="gallery"
                     height={320}
                     width={248}
-                    placeholder="blur"
-                    blurDataURL={shimmerData(248, 320)}
+                    // placeholder="blur"
+                    // blurDataURL={shimmerData(248, 320)}
                     className="h-full w-full object-cover"
                   />
                 </figure>
@@ -89,8 +88,8 @@ export default function Home() {
                   <Image
                     src={data!.img}
                     alt="gallery"
-                    placeholder="blur"
-                    blurDataURL={shimmerData(248, 320)}
+                    // placeholder="blur"
+                    // blurDataURL={shimmerData(248, 320)}
                     height={320}
                     width={248}
                     className="h-full w-full object-cover"
@@ -106,8 +105,8 @@ export default function Home() {
                   <Image
                     src={data!.img}
                     alt="gallery"
-                    placeholder="blur"
-                    blurDataURL={shimmerData(248, 320)}
+                    // placeholder="blur"
+                    // blurDataURL={shimmerData(248, 320)}
                     height={320}
                     width={248}
                     className="h-full w-full object-cover"
@@ -189,30 +188,22 @@ export default function Home() {
         </div>
       </section>
 
-      <Section>
-        <h1>Experiences</h1>
-        <ul className="space-y-6">
-          {workData.map((work, i) => (
-            <WorkListItem key={i} {...work} />
-          ))}
-        </ul>
-      </Section>
-
       {/* TODO: Carousel */}
-      <Section className="mt-10 text-center">
-        <h1>Featured Projects</h1>
-        <ul className="mx-auto flex flex-wrap place-content-center items-center justify-center gap-4 md:max-w-2xl">
+      <Section className="mt-10" id="projects">
+        <h1 className='text-center'>Feature</h1>
+        <p className="text-2xl text-center">What I have made.</p>
+        <ul className="mx-auto gap-x-8 gap-y-16 grid md:grid-cols-2 lg:grid-cols-3">
           {featuredProjects.map((p, i) => (
-            <li key={p.title} className={`relative mx-auto w-full  max-w-xs`}>
+            <li key={p.title} className={`relative w-full`}>
               <ProjectItem {...p} />
             </li>
           ))}
         </ul>
       </Section>
 
-      <Section>
-        <h1 className="text-right">Services</h1>
-        <p className="text-right text-2xl">What I can do for you.</p>
+      <Section id="services">
+        <h1 className="text-center">Services</h1>
+        <p className="text-center text-2xl">What I can do for you.</p>
         <ul className="flex flex-col gap-4 md:flex-row">
           {serviceData.map((service, i) => (
             <ServiceItem key={i} {...service} />
@@ -220,11 +211,11 @@ export default function Home() {
         </ul>
       </Section>
 
-      <Section>
+      <Section id="tech">
         <h1>Technologies</h1>
         <p className="text-2xl">Technology I am familiar with.</p>
         <p className="mt-4 flex gap-4 text-xl">
-          &#10170; React, Next.js, Remix, Node.js, Express, PostgreSQL, Redis,
+          &#10170; React, Next.js, Remix, Astro, Node.js, Express, PostgreSQL, Redis,
           Firebase
           <br />
           &#10170; GraphQl, REST <br />
@@ -234,6 +225,15 @@ export default function Home() {
           Docker <br />
           &#10170; Dart, Typescript
         </p>
+      </Section>
+
+      <Section id="experiences">
+        <h1>Experiences</h1>
+        <ul className="space-y-6">
+          {workData.map((work, i) => (
+            <WorkListItem key={i} {...work} />
+          ))}
+        </ul>
       </Section>
     </Page>
   );
